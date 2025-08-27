@@ -1,0 +1,10 @@
+{
+	"type": "module",
+	"dependencies": {
+		"tsdown": "^0.14.2",
+		"typescript": "^5.9.2"
+	},
+	"scripts": {
+		"watch": "tsdown --watch --dts"
+	}
+}
