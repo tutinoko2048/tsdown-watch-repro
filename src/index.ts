@@ -7,7 +7,7 @@ export interface ExampleType {
 const value: ExampleType = {
   aaa: 1,
   bbb: 22,
-  ccc: 333
+  ccc: 'test',
 };
 
 console.log(value);
