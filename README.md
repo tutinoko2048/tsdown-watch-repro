@@ -7,7 +7,7 @@ This repository reproduces an issue where TypeScript declaration files (.d.ts) a
 When using tsdown with `--watch --dts` options to monitor file changes, JavaScript files (.js) are properly regenerated when TypeScript files are modified, but TypeScript declaration files (.d.ts) are not updated.
 
 ## Environment
-
+- OS: `windows`
 - tsdown: `0.14.2`
   - (rolldown-plugin-dts: `0.15.9`)
 - typescript: `5.9.2`
@@ -69,3 +69,26 @@ When TypeScript files are modified, both JavaScript files and TypeScript declara
 
 Only JavaScript files are updated, while TypeScript declaration files remain unchanged from their initial generation.
 
+
+```bash
+C:\Users\retoruto\Desktop\tsdown-watch-repro>pnpm watch
+
+> @ watch C:\Users\retoruto\Desktop\tsdown-watch-repro
+> tsdown --watch --dts
+
+ℹ tsdown v0.14.2 powered by rolldown v1.0.0-beta.34
+ℹ entry: src\index.ts
+ℹ Build start
+ℹ Cleaning 3 files
+ℹ dist\index.js    0.12 kB │ gzip: 0.12 kB
+ℹ dist\index.d.ts  0.13 kB │ gzip: 0.12 kB
+ℹ 2 files, total: 0.25 kB
+✔ Build complete in 826ms
+ℹ Watching for changes in C:\Users\retoruto\Desktop\tsdown-watch-repro
+ℹ Change detected: change C:\Users\retoruto\Desktop\tsdown-watch-repro\src\index.ts
+ℹ Cleaning 3 files
+ℹ dist\index.js    0.12 kB │ gzip: 0.12 kB
+ℹ dist\index.d.ts  0.13 kB │ gzip: 0.12 kB
+ℹ 2 files, total: 0.25 kB
+✔ Rebuild complete in 35ms
+```
